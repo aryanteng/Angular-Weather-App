@@ -1,5 +1,21 @@
-<div class="">
-  <div class=""></div>
-  <div class=""></div>
+<div class="w-full h-[80vh] shadow-lg rounded-2xl">
+  <div class="flex">
+    <img
+      src="../assets/hot.jpg"
+      *ngIf="14 > 15"
+      alt="hot jpg"
+      class="object-cover w-full h-80"
+    />
+    <img
+      src="../assets/cold.jpg"
+      *ngIf="14 <= 15"
+      alt="cold jpg"
+      class="object-cover w-full h-80"
+    />
+  </div>
+  <div class="flex flex-col px-4">
+    <p>More Information</p>
+    <div></div>
+  </div>
 </div>
 <router-outlet></router-outlet>
