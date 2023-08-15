@@ -27,30 +27,34 @@
       class="flex-1 bg-[#2F68BC] py-4 rounded-b-xl flex flex-wrap justify-center items-center gap-10"
     >
       <div class="w-full flex justify-between items-center px-4">
-        <div class="flex items-center">
-          <img src="../assets/thermometer.svg" alt="" class="'w-5 h-5" />
-          <span>min</span>
+        <div class="flex items-center gap-1">
+          <img
+            [src]="weatherData.current.condition.icon"
+            alt=""
+            class="'w-5 h-5"
+          />
+          <span>Condition</span>
         </div>
-        <p>10°C</p>
+        <p>{{ weatherData.current.condition.text }}</p>
       </div>
       <div class="w-full flex justify-between items-center px-4">
-        <div class="flex items-center">
+        <div class="flex items-center gap-1">
           <img src="../assets/thermometer.svg" alt="" class="'w-5 h-5" />
-          <span>min</span>
+          <span>Date & Time</span>
         </div>
-        <p>10°C</p>
+        <p>{{ weatherData.location.localtime }}</p>
       </div>
       <div class="w-full flex justify-between items-center px-4">
-        <div class="flex items-center">
+        <div class="flex items-center gap-1">
           <img src="../assets/droplet.svg" alt="" class="'w-5 h-5" />
-          <span>humidity</span>
+          <span>Humidity</span>
         </div>
         <p>{{ weatherData.current.humidity }}%</p>
       </div>
       <div class="w-full flex justify-between items-center px-4">
-        <div class="flex items-center">
+        <div class="flex items-center gap-1">
           <img src="../assets/wind.svg" alt="" class="'w-5 h-5" />
-          <span>wind</span>
+          <span>Wind</span>
         </div>
         <p>{{ weatherData.current.wind_kph }}km/h</p>
       </div>
