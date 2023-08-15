@@ -1,30 +1,30 @@
-<div class="w-96 h-[80vh] shadow-lg rounded-2xl">
+<div class="w-96 h-[80vh] shadow-lg rounded-2xl" *ngIf="weatherData">
   <div class="relative overflow-hidden rounded-t-2xl w-full h-1/2">
     <img
       src="../assets/hot.jpg"
-      *ngIf="14 > 15"
+      *ngIf="weatherData.current.temp_c > 15"
       alt="hot jpg"
-      class="absolute top-0 left-0 h-full"
+      class="absolute w-full top-0 left-0 h-full"
     />
     <img
       src="../assets/cold.jpg"
-      *ngIf="14 <= 15"
+      *ngIf="weatherData.current.temp_c <= 15"
       alt="cold jpg"
       class="absolute top-0 left-0 h-full"
     />
     <div
       class="relative z-10 w-full h-full flex flex-col items-center justify-center"
     >
-      <div class="text-white text-2xl">Wellington</div>
+      <div class="text-white text-2xl">{{ weatherData.location.name }}</div>
       <div class="text-white text-6xl font-bold">
-        {{ 14.4 | number : "1.0-0" }}°C
+        {{ weatherData.current.temp_c | number : "1.0-0" }}°C
       </div>
     </div>
   </div>
   <div class="flex flex-col m-4 gap-5 text-sm text-white">
     <p class="text-white">More Information</p>
     <div
-      class="flex-1 bg-[#2F68BC] py-4 rounded-b-xl flex flex-wrap justify-center items-center gap-5"
+      class="flex-1 bg-[#2F68BC] py-4 rounded-b-xl flex flex-wrap justify-center items-center gap-10"
     >
       <div class="w-full flex justify-between items-center px-4">
         <div class="flex items-center">
@@ -45,21 +45,14 @@
           <img src="../assets/droplet.svg" alt="" class="'w-5 h-5" />
           <span>humidity</span>
         </div>
-        <p>77%</p>
-      </div>
-      <div class="w-full flex justify-between items-center px-4">
-        <div class="flex items-center">
-          <img src="../assets/thermometer.svg" alt="" class="'w-5 h-5" />
-          <span>min</span>
-        </div>
-        <p>10°C</p>
+        <p>{{ weatherData.current.humidity }}%</p>
       </div>
       <div class="w-full flex justify-between items-center px-4">
         <div class="flex items-center">
           <img src="../assets/wind.svg" alt="" class="'w-5 h-5" />
           <span>wind</span>
         </div>
-        <p>11km/h</p>
+        <p>{{ weatherData.current.wind_kph }}km/h</p>
       </div>
     </div>
   </div>

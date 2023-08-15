@@ -1,8 +1,6 @@
 export interface WeatherData {
   location: Location;
   current: Current;
-  wind_kph: number;
-  humidity: number;
 }
 
 export interface Location {
@@ -11,4 +9,6 @@ export interface Location {
 
 export interface Current {
   temp_c: number;
+  wind_kph: number;
+  humidity: number;
 }
