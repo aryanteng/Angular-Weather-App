@@ -1,3 +1,15 @@
+<div class="flex justify-center my-5">
+  <form (submit)="onSubmit()">
+    <input
+      class="p-2 bg-inherit outline-none border-2 border-gray-300 focus:border-blue-500 rounded-xl text-white"
+      type="text"
+      [(ngModel)]="city"
+      placeholder="Search City"
+      name="city"
+    />
+  </form>
+</div>
+
 <div class="w-96 h-[80vh] shadow-lg rounded-2xl" *ngIf="weatherData">
   <div class="relative overflow-hidden rounded-t-2xl w-full h-1/2">
     <img
